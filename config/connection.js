@@ -12,4 +12,19 @@ const sequelize = new Sequelize(
   }
 );
 
+// const sequelize = new Sequelize(
+//   // Database name
+//   'blog_db',
+//   // User
+//   'root',
+//   // Password
+//   'password',
+//   {
+//     // Database location
+//     host: 'localhost',
+//     dialect: 'mysql',
+//     port: 3306
+//   }
+// );
+
 module.exports = sequelize;
