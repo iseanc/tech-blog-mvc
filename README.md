@@ -9,7 +9,7 @@ AS A developer who writes about tech
 I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
-This project uses the *npm express-handlebars* and *handlebars* packages to deliver HTML templates to a client browser. It enables users to interact with a server-side relational database (MySQL) through *npm express* routes to create, update and view  blog posts, and submit comments to other blog posts.
+This project follows the MVC paradigm in its architectural structure, using *Handlebars.js* as the templating language to deliver HTML pages to a client browser, *Sequelize* as the ORM, and the *express-session* npm package for authentication. It enables users to interact with a server-side relational database (MySQL) through *npm express* routes to create, update and view  blog posts, and submit comments to other blog posts.
 
 ## Table of Contents (Optional)
 
