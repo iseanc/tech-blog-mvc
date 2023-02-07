@@ -35,9 +35,11 @@ Provide instructions and examples for use. Include screenshots as needed.
 - Create a new user account
 - Use the links and forms to create and manage blog posts and comments.
 
-
-
+**Screen Shot** 
     ![techblog screenshot](assets/images/techblog.png)
+
+**App Deployed on Heroku**
+    [Tech Blog](https://hidden-plains-96955.herokuapp.com)
 
 
 ## License
