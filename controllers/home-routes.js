@@ -1,21 +1,19 @@
 const router = require('express').Router();
-const { Post, Comment } = require('../models');
+const { Post, Comment, User } = require('../models');
 
-// Load the home page with all blog posts
+// Get all blog posts
 router.get('/', async (req, res) => {
-  // TODO: Retrieve blog posts from database
-    // NOTE: Reqs do NOT mention including blog post comments
+  // Retrieve blog posts from database
   try {
     const dbPostData = await Post.findAll({
-      // include: [
-      //   {
-      //     model: Painting,
-      //     attributes: ['filename', 'description'],
-      //   },
-      // ],
+      // attributes: ['title','content','created_at','date_created'],
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
     });
-
-    // console.log(dbPostData);
 
     const posts = dbPostData.map((post) =>
       // Map.prototype.get(), "plain: true" is SEQUELIZE syntax, part of .findAll()  
@@ -23,7 +21,6 @@ router.get('/', async (req, res) => {
     );
     
     res.render('homepage', {
-      // galleries, -- may need BLOG posts and/or COMMENTS here
       posts,
       loggedIn: req.session.loggedIn,
     });
@@ -31,11 +28,6 @@ router.get('/', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-  //Render the 'homepage' Handlebars.js template.
-  // res.render('homepage', {
-  //   // galleries, -- may need BLOG posts and/or COMMENTS here
-  //   loggedIn: req.session.loggedIn,
-  // });
 });
 
 // GET one gallery
